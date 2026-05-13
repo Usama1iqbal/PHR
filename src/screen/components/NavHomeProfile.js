@@ -1,32 +1,34 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 // Humne 'navigation' aur 'activeTab' ko props mein liya taake ye dynamic ho sake
 const NavHomeProfile = ({ navigation, activeTab }) => {
-  
   // Blue color jo aapne image mein dikhaya
-  const activeColor = '#2F80ED'; 
+  const activeColor = '#2F80ED';
   const inactiveColor = '#999';
 
   return (
     <View style={styles.bottomNav}>
-      
       {/* 1. Home Button */}
       <TouchableOpacity
         style={styles.navItem}
         onPress={() => navigation.navigate('PatientList')} // PatientList screen par le jayega
       >
         <Image
-          source={require('../../assests/GHR.png')} 
-          style={[styles.navIconImage, { tintColor: activeTab === 'Home' ? activeColor : inactiveColor }]}
+          source={require('../../assests/GHR.png')}
+          style={[
+            styles.navIconImage,
+            { tintColor: activeTab === 'Home' ? activeColor : inactiveColor },
+          ]}
         />
-        <Text style={[styles.navText, { color: activeTab === 'Home' ? activeColor : inactiveColor }]}>Home</Text>
+        <Text
+          style={[
+            styles.navText,
+            { color: activeTab === 'Home' ? activeColor : inactiveColor },
+          ]}
+        >
+          Home
+        </Text>
       </TouchableOpacity>
 
       {/* 2. Add Patient Button */}
@@ -51,7 +53,10 @@ const NavHomeProfile = ({ navigation, activeTab }) => {
       </TouchableOpacity> */}
 
       {/* 4. Profile */}
-      <TouchableOpacity style={styles.navItem} onPress={() => console.log('Profile Pressed')}>
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => console.log('Profile Pressed')}
+      >
         <Image
           source={require('../../assests/Profile.png')}
           style={[styles.navIconImage, { tintColor: inactiveColor }]}
@@ -59,6 +64,27 @@ const NavHomeProfile = ({ navigation, activeTab }) => {
         <Text style={styles.navText}>Profile</Text>
       </TouchableOpacity>
 
+      {/* 1. Home Button */}
+      <TouchableOpacity
+        style={styles.navItem}
+        onPress={() => navigation.navigate('')} // PatientList screen par le jayega
+      >
+        <Image
+          source={require('../../assests/Logs.png')}
+          style={[
+            styles.navIconImage,
+            { tintColor: activeTab === 'Logs' ? activeColor : inactiveColor },
+          ]}
+        />
+        <Text
+          style={[
+            styles.navText,
+            { color: activeTab === 'Logs' ? activeColor : inactiveColor },
+          ]}
+        >
+          Vitals
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };

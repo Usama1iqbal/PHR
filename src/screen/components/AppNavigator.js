@@ -6,17 +6,23 @@ import Login from '../Login';
 import Home from '../Home';
 import ViewDoctor from '../ViewDoctor';
 import ViewNotes from '../ViewNotes';
-import ViewPatient from '../ViewPatient'
-import CBCReport from '../CBCReport'
+import ViewPatient from '../ViewPatient';
+import CBCReport from '../CBCReport';
+import Vitals from '../Vitals';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Signup">
+    <Stack.Navigator initialRouteName="Vitals">
       <Stack.Screen
         name="Signup"
         component={Signup}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Vitals"
+        component={Vitals}
         options={{ headerShown: false }}
       />
       <Stack.Screen
